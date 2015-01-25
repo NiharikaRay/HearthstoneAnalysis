@@ -23,8 +23,13 @@ def jsonDecode(filename):
   rewardCards = data["Reward"]
   gvgCards = data["Goblins vs Gnomes"]
   
+  setSets = [missionCards, classicCards, naxCards, systemCards,
+            creditsCards, basicCards, debugCards, promotionCards,
+            rewardCards, gvgCards]
+
+
   maxKeys = []
-  for cards in missionsCards:
+  for cardSets in setSets:
     keys = cards.keys()
     if (len(keys) > len(maxKeys)):
       maxKeys = keys 
