@@ -1,0 +1,39 @@
+mechanics,name,faction,text,rarity,cost,health,inPlayText,type,id,attack,durability,playerClass
+,Bananas,,This minion has +1/+1. <i>(+1 Attack/+1 Health)</i>,,,,,Enchantment,TU4c_006e,,,
+,Bananas,Neutral,Give a friendly minion +1/+1. <i>(+1 Attack/+1 Health)</i>,Common,1,,,Spell,TU4c_006,,,
+[u'Deathrattle'],Barrel,Neutral,Is something in this barrel?,Common,0,2,Breakable,Minion,TU4c_003,,,
+,Barrel Toss,Neutral,Deal 2 damage.,Common,1,,,Spell,TU4c_002,,,
+,Brewmaster,,,Common,4,4,,Minion,TU4f_005,4,,
+,Crazed Hunter,,,Common,1,1,,Minion,TU4d_002,1,,
+[u'Battlecry'],Crazy Monkey,,<b>Battlecry:</b> Throw Bananas.,Common,1,2,,Minion,TU4f_007,1,,
+,Dual Warglaives,,,Common,6,,,Weapon,TU4e_007,4,2,
+,Flame Burst,,Shoot 5 missiles at random enemies for $1 damage each.,Common,3,,,Spell,TU4e_005,,,
+,Flame of Azzinoth,,,Common,1,1,,Minion,TU4e_002t,2,,
+,Flames of Azzinoth,,"<b>Hero Power</b>
+Summon two 2/1 minions.",,2,,,Hero Power,TU4e_002,,,
+,Gnoll,,,Common,1,1,,Minion,TU4a_003,1,,
+,Hemet Nesingwary,,,Common,,20,,Hero,TU4d_001,,,Hunter
+,Hidden Gnome,Neutral,Was hiding in a barrel!,Common,2,3,,Minion,TU4c_005,1,,
+,Hogger,,,Common,,10,,Hero,TU4a_001,,,
+,Hogger SMASH!,,Deal 4 damage.,Common,3,,,Spell,TU4a_004,,,
+,Illidan Stormrage,,,,,30,,Hero,TU4e_001,,,Hunter
+,Jaina Proudmoore,,,Common,,27,,Hero,TU4a_006,,,Mage
+,King Mukla,,,Common,,26,,Hero,TU4c_001,,,
+,Legacy of the Emperor,,Has +2/+2. <i>(+2 Attack/+2 Health)</i>,,,,,Enchantment,TU4f_004o,,,
+,Legacy of the Emperor,,Give your minions +2/+2. <i>(+2 Attack/+2 Health)</i>,Common,3,,,Spell,TU4f_004,,,
+,Lorewalker Cho,,,,,25,,Hero,TU4f_001,,,
+,Massive Gnoll,,,Common,4,2,,Minion,TU4a_005,5,,
+[u'OneTurnEffect'],Might of Mukla,,King Mukla has +8 Attack this turn.,,,,,Enchantment,TU4c_008e,,,
+,Millhouse Manastorm,,,Common,,20,,Hero,TU4b_001,,,Mage
+,Mukla's Big Brother,,So strong! And only 6 Mana?!,Common,6,10,,Minion,TU4c_007,10,,
+,Naga Myrmidon,,<b></b>,Common,1,1,,Minion,TU4e_003,1,,
+,Pandaren Scout,,,Common,1,1,,Minion,TU4f_002,1,,
+,Riverpaw Gnoll,,,Common,1,1,,Minion,TU4a_002,2,,
+,Shado-Pan Monk,,,Common,2,2,,Minion,TU4f_003,2,,
+,Shotgun Blast,,"<b>Hero Power</b>
+Deal 1 damage.",Common,2,,,Hero Power,TU4d_003,,,Hunter
+,Stomp,Neutral,Deal 2 damage to all enemies.,Common,2,,,Spell,TU4c_004,,,
+,Transcendence,,"Until you kill Cho's minions, he can't be attacked.",Common,1,,,Spell,TU4f_006,,,
+,Transcendence,,"Until you kill Cho's minions, he can't be attacked.",,,,,Enchantment,TU4f_006o,,,
+,Warglaive of Azzinoth,,,Common,2,,,Weapon,TU4e_004,2,2,
+,Will of Mukla,,Restore 8 Health.,Common,3,,,Spell,TU4c_008,,,
