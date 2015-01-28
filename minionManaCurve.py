@@ -3,6 +3,7 @@ import numpy as np
 import csv
 from pprint import pprint 
 import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
 
 def _decode_list(data):
     rv = []
@@ -49,52 +50,46 @@ def allManaCurve():
   allCards = missionCards + classicCards + naxCards + systemCards + creditsCards + basicCards + debugCards + promotionCards + rewardCards + gvgCards
 
   allCards = filter(lambda x: ("cost" in x), allCards)
-
-  types = {}
-  for card in allCards: 
-    typeCard = card["type"]
-    if typeCard in types: 
-      types[typeCard] += 1
-    else:
-      types[typeCard] = 1
-
+  allCards = filter(lambda x: (x["type"] == "Minion"), allCards)
 
   manas = [x for x in range(0,21)]
   minionDict = dict.fromkeys(manas,0)
-  spellsDict = dict.fromkeys(manas,0)
-  weaponsDict = dict.fromkeys(manas,0)
 
   for card in allCards:
     cost = card["cost"]
-    typeCard = card["type"]
-    if (typeCard == "Minion"):
-      minionDict[cost] += 1
-    elif (typeCard == "Spell"):
-      spellsDict[cost] += 1
-    else: 
-      weaponsDict[cost] += 1
+    minionDict[cost] += 1
 
 
   fig, ax = plt.subplots()
   ind = np.arange(21)
-  width = 0.35
+  indString = map(lambda x: str(x), ind)
+  width = 0.75
   i = 0
   while (i < 21): 
     minion = minionDict[i]
-    spell = spellsDict[i]
-    weapon = weaponsDict[i]
     rect1 = ax.bar(ind[i], minion, width, color="green", align="center")
-    rect2 = ax.bar(ind[i], spell, width, bottom=minionDict[i], color="blue", align="center")
-    rect3 = ax.bar(ind[i], weapon, width, bottom=minion+spell, color="black", align="center")
+    if (minion != 0):
+      ax.text(ind[i], minion + 1.05,  '%d'%int(minion),
+                ha='center', va='bottom', fontsize=12, 
+                fontname='Calibri')
     i += 1
   
-
-  ax.set_ylabel('Number of cards')
-  ax.set_title("Mana Curve for All Cards")
-  ax.set_xlabel("Mana Cost")
+  ax.spines['top'].set_visible(False)
+  ax.spines['right'].set_visible(False)
+  ax.set_axis_bgcolor('#ffefd5')
+  ax.set_yticks(np.arange(90,step=10))
+  ax.set_ylabel('Number of cards', fontsize=12, fontname='Calibri')
+  ax.set_xlabel("Mana Cost", fontsize=12, fontname='Calibri')
   ax.set_xticks(ind)
-  ax.legend([rect1, rect2, rect3], ['Minions', 'Spells', 'Weapons'])
-  #TODO: SAVE FIGURE
-  plt.show()
+  ax.xaxis.set_ticks_position('bottom')
+  ax.yaxis.set_ticks_position('left')
+  ax.set_title("Minion Mana Curve", fontsize=20, fontname='Calibri')
+
+  for label in (ax.get_xticklabels() + ax.get_yticklabels()):
+    label.set_fontname('Calibri')
+    label.set_fontsize(10)
+
+  #plt.show()
+  plt.savefig('minionManaCurve.png', bbox_inches='tight', facecolor='#ffefd5')
 
 allManaCurve()
